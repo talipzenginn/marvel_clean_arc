@@ -16,9 +16,8 @@ void main() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
     usecase = GetRandomNumberTrivia(mockNumberTriviaRepository);
   });
-  const tNumber = 1;
   const tNumberTrivia = NumberTrivia(number: 1, text: 'test');
-  test('should get random trivia from the repository', () async {
+  test('Should get random trivia from the repository', () async {
     //arrange
     when(mockNumberTriviaRepository.getRandomNumberTrivia())
         .thenAnswer((_) async => const Right(tNumberTrivia));

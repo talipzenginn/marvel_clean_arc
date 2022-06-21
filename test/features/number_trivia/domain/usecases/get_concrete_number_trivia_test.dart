@@ -17,13 +17,13 @@ void main() {
   });
   const tNumber = 1;
   const tNumberTrivia = NumberTrivia(number: 1, text: 'test');
-  test('should get triva for the number from the repository', () async {
+  test('Should get triva for the number from the repository', () async {
     //arrange
     when(mockNumberTriviaRepository.getConcreteNumberTrivia(any))
         .thenAnswer((_) async => const Right(tNumberTrivia));
     //act
     final result =
-        await usecase(Params(number: tNumber)); //same as usecase.call(...)
+        await usecase(const Params(number: tNumber)); //same as usecase.call(...)
     //assert
     expect(result, const Right(tNumberTrivia));
     verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
